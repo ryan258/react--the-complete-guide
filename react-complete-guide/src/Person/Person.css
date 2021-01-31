@@ -1,0 +1,15 @@
+/*This CSS will not be scoped to this component and well become part of the global CSS code.
+ by default no file is included into the code - so we have to manually import this file into the Person.js component*/
+.Person {
+  width: 60%;
+  margin: 16px auto;
+  border: 1px solid yellow;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 16px;
+  text-align: center;
+}
+
+/** {
+  color: yellow;
+}
+*/
