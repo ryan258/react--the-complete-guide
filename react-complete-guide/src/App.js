@@ -1,7 +1,6 @@
-import "./App.css"
-import Person from "./Person/Person"
+import Person from './Person/Person'
 
-import { Component } from "react"
+import { Component } from 'react'
 
 class App extends Component {
   // property - variable in a class
@@ -9,9 +8,9 @@ class App extends Component {
   // state is managed from inside a component - only available in cpomponents that extend Component
   state = {
     persons: [
-      { name: "Ryan", age: 337 },
-      { name: "Manny", age: 320 },
-      { name: "Orson", age: 331 }
+      { name: 'Ryan', age: 337 },
+      { name: 'Manny', age: 320 },
+      { name: 'Orson', age: 331 }
     ]
   }
 
@@ -19,20 +18,20 @@ class App extends Component {
     // console.log("i have been clicked")
     this.setState({
       persons: [
-        { name: "Ryananananaana", age: 337 },
+        { name: 'Ryananananaana', age: 337 },
         { name: newName, age: 320 },
-        { name: "Orson", age: 333 }
+        { name: 'Orson', age: 333 }
       ]
     })
   }
 
   nameChangedHandler = (event) => {
-    console.log("i have been changed!")
+    console.log('i have been changed!')
     this.setState({
       persons: [
-        { name: "Ryananananaana", age: 33 },
+        { name: 'Ryananananaana', age: 33 },
         { name: event.target.value, age: 30 },
-        { name: "O-Dawg", age: 32 }
+        { name: 'O-Dawg', age: 32 }
       ]
     })
   }
@@ -41,18 +40,18 @@ class App extends Component {
     // example of inline-styles
     // - hovering is hard to do
     const style = {
-      backgroundColor: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: "pointer"
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
     }
     return (
       <div className="App">
         <header className="App-header">
           <h1>Helllo from App.js</h1>
           {/* syntax #1 - but can be inefficient bc of rerendering */}
-          <button style={style} onClick={() => this.switchNameHandler("Smurf!")}>
+          <button style={style} onClick={() => this.switchNameHandler('Smurf!')}>
             Switch Name
           </button>
           <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
@@ -62,7 +61,7 @@ class App extends Component {
             // pass event handler down to this Person as a prop
             // Syntax #2 use this syntax when you can
             // v Two-way Data Binding v
-            click={this.switchNameHandler.bind(this, "MANNY!")}
+            click={this.switchNameHandler.bind(this, 'MANNY!')}
             // with changed, we can wire up access it in <Person />
             changed={this.nameChangedHandler}
           >
