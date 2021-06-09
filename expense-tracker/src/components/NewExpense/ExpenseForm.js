@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // state will detach the variable from the lifecycle, thus survives all that
   // and when it updates the component rerenders
   //! you can and probably will have multiple states per component
@@ -56,7 +56,8 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     }
 
-    console.log(expenseData)
+    // console.log(expenseData)
+    props.onSaveExpenseData(expenseData)
     // clear form values after submit
     setEnteredTitle('')
     setEnteredAmount('')
