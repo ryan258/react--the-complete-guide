@@ -58,6 +58,7 @@ const ExpenseForm = (props) => {
 
     // console.log(expenseData)
     props.onSaveExpenseData(expenseData)
+
     // clear form values after submit
     setEnteredTitle('')
     setEnteredAmount('')
