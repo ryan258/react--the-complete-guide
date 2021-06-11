@@ -15,14 +15,18 @@ const Expenses = ({ items }) => {
     return expense.date.getFullYear().toString() === filteredYear
   })
 
+  let expensesContent = <p>No expenses found 👻</p>
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense) => <ExpenseItem key={expense.id} expense={expense} />)
+  }
+
   return (
     <div>
       <Card className="expenses">
         {/* Render the list dynamically */}
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem key={expense.id} expense={expense} />
-        ))}
+        {expensesContent}
       </Card>
     </div>
   )
